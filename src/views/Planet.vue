@@ -20,7 +20,9 @@
         <h3 class="neon-blue">Residents:</h3>
         <ul>
           <li v-for="(item, index) in currentResidents" :key="index">
-            <router-link :to="'../characters/' + charactersUrlToId(item.url)">{{ item.name }}</router-link>
+            <router-link :to="'../characters/' + charactersUrlToId(item.url)">{{
+              item.name
+            }}</router-link>
           </li>
         </ul>
       </div>
@@ -28,7 +30,9 @@
         <h3 class="neon-blue">Films:</h3>
         <ul>
           <li v-for="(item, index) in currentFilms" :key="index">
-            <router-link :to="'../films/' + filmUrlToId(item.url)">{{ item.title }}</router-link>
+            <router-link :to="'../films/' + filmUrlToId(item.url)">{{
+              item.title
+            }}</router-link>
           </li>
         </ul>
       </div>

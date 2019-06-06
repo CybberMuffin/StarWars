@@ -3,10 +3,10 @@
     <h2></h2>
     <div class="card-deck d-flex justify-content-around flex-wrap">
       <div v-for="(item, index) in getRightOrderFilms" :key="index">
-        <router-link class="card card_one" :to="'films/' + getCorrectId(item.url)" tag="div">
+        <router-link class="card card_one" :to="'films/' + filmUrlToId(item.url)" tag="div">
           <img
             class="card-img-top picture mask flex-center"
-            :src="require('@/assets/' + getCorrectId(item.url) + '.jpg')"
+            :src="require('@/assets/' + filmUrlToId(item.url) + '.jpg')"
             alt="Card image cap"
           >
           <div class="card-body">
@@ -26,18 +26,11 @@ import { mapState, mapMutations, mapGetters } from "vuex";
 export default {
   computed: {
     ...mapState(["films"]),
-    ...mapGetters(["getCorrectId", "getRightOrderFilms"]),
-
-    getCorrectId: state => url => url.substring(27, url.length - 1)
+    ...mapGetters(["getRightOrderFilms", "filmUrlToId"])
   },
 
   methods: {
-    ...mapMutations(["setFilms"]),
-
-    correctId(url) {
-      let some = url.substring(url.length - 2, url.length - 1);
-      return some;
-    }
+    ...mapMutations(["setFilms"])
   },
 
   async created() {

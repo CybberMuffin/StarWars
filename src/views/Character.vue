@@ -16,12 +16,15 @@
           Homeworld:
           <router-link
             :to="'../planets/' + planetUrlToId(currentCharacter.homeworld)"
-          >{{ homeworld.name }}</router-link>
+            >{{ homeworld.name }}</router-link
+          >
         </h4>
         <h4 class="neon-blue">Films:</h4>
         <ul>
           <li v-for="(item, index) in currentFilms" :key="index">
-            <router-link :to="'../films/' + filmUrlToId(item.url)">{{ item.title }}</router-link>
+            <router-link :to="'../films/' + filmUrlToId(item.url)">{{
+              item.title
+            }}</router-link>
           </li>
         </ul>
       </div>

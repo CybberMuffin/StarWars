@@ -2,14 +2,14 @@
   <div>
     <div class="row left-bar">
       <div class="col-md-6">
-        <h1 class="neon-red">{{currentFilm.title}}</h1>
+        <h1 class="neon-red">{{ currentFilm.title }}</h1>
         <div class="neon-red">
-          <h4>Director: {{currentFilm.director}}</h4>
-          <h4>Producer: {{currentFilm.producer}}</h4>
-          <h4>Release date: {{currentFilm.release_date}}</h4>
+          <h4>Director: {{ currentFilm.director }}</h4>
+          <h4>Producer: {{ currentFilm.producer }}</h4>
+          <h4>Release date: {{ currentFilm.release_date }}</h4>
           <h4>Description:</h4>
         </div>
-        <h6>{{currentFilm.opening_crawl}}</h6>
+        <h6>{{ currentFilm.opening_crawl }}</h6>
       </div>
     </div>
     <div class="row under left-bar">
@@ -17,7 +17,9 @@
         <h3 class="neon-blue">Main characters:</h3>
         <ul>
           <li v-for="(item, index) in currentCharacters" :key="index">
-            <router-link :to="'../characters/' + charactersUrlToId(item.url)">{{ item.name }}</router-link>
+            <router-link :to="'../characters/' + charactersUrlToId(item.url)">{{
+              item.name
+            }}</router-link>
           </li>
         </ul>
       </div>
@@ -25,7 +27,9 @@
         <h3 class="neon-blue">Planets:</h3>
         <ul>
           <li v-for="(item, index) in currentPlanets" :key="index">
-            <router-link :to="'../planets/' + planetUrlToId(item.url)">{{ item.name }}</router-link>
+            <router-link :to="'../planets/' + planetUrlToId(item.url)">{{
+              item.name
+            }}</router-link>
           </li>
         </ul>
       </div>

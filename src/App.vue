@@ -6,7 +6,7 @@
         <h5>Star Wars Films</h5>
       </router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
