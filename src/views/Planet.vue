@@ -20,9 +20,11 @@
         <h3 class="neon-blue">Residents:</h3>
         <ul>
           <li v-for="(item, index) in currentResidents" :key="index">
-            <router-link :to="'../characters/' + charactersUrlToId(item.url)">{{
+            <router-link :to="'../characters/' + charactersUrlToId(item.url)">
+              {{
               item.name
-            }}</router-link>
+              }}
+            </router-link>
           </li>
         </ul>
       </div>
@@ -30,9 +32,11 @@
         <h3 class="neon-blue">Films:</h3>
         <ul>
           <li v-for="(item, index) in currentFilms" :key="index">
-            <router-link :to="'../films/' + filmUrlToId(item.url)">{{
+            <router-link :to="'../films/' + filmUrlToId(item.url)">
+              {{
               item.title
-            }}</router-link>
+              }}
+            </router-link>
           </li>
         </ul>
       </div>
@@ -75,8 +79,8 @@ export default {
     },
 
     currentResidentsId() {
-      return this.currentResidents.map(resident =>
-        Number(this.charactersUrlToId(resident.url))
+      return this.currentPlanet.residents.map(url =>
+        Number(this.charactersUrlToId(url))
       );
     },
 
