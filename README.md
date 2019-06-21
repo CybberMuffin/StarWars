@@ -27,3 +27,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Running project
+https://unruffled-colden-4cdaf6.netlify.com/#/
